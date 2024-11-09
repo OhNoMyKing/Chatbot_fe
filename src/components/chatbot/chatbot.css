@@ -1,0 +1,134 @@
+/* src/components/Chatbot/Chatbot.css */
+
+/* Container chính cho chatbot */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 1000; /* Đảm bảo chatbot luôn hiển thị trên các phần tử khác */
+}
+
+/* Nút bật/tắt chatbot */
+.chatbot-toggle-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px; /* Đặt kích thước lớn hơn */
+    height: 60px; /* Đặt kích thước lớn hơn */
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Chatbot container */
+.chatbot {
+    width: 100%;
+    max-width: 400px; /* Giới hạn kích thước tối đa */
+    max-height: 500px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Làm cho chatbot có thể điều chỉnh chiều cao */
+}
+
+/* Tiêu đề của chatbot */
+.chatbot-header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Phần hiển thị tin nhắn */
+.chatbot-messages {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Tin nhắn của người dùng và bot */
+.chatbot-message {
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+/* Tin nhắn của người dùng */
+.chatbot-message.user {
+    align-self: flex-end;
+    background-color: #d1e7ff;
+    color: #333;
+}
+
+/* Tin nhắn của bot */
+.chatbot-message.bot {
+    align-self: flex-start;
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+/* Phần nhập liệu của người dùng */
+.chatbot-input-container {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+.chatbot-input-container input {
+    flex-grow: 1;
+    padding: 12px; /* Thêm padding để hộp nhập liệu lớn hơn */
+    border: none;
+    outline: none;
+    border-top-left-radius: 10px;
+    font-size: 16px;
+}
+
+/* Nút gửi tin nhắn */
+.chatbot-input-container button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-top-right-radius: 10px;
+    font-size: 16px;
+}
+
+/* Media query để đảm bảo chatbot responsive */
+@media (max-width: 768px) {
+    .chatbot {
+        max-width: 90%; /* Giảm chiều rộng của chatbot trên màn hình nhỏ */
+    }
+    
+    .chatbot-toggle-button {
+        width: 50px; /* Giảm kích thước của nút trên màn hình nhỏ */
+        height: 50px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chatbot {
+        max-width: 95%; /* Chiều rộng chatbot tối đa trên các màn hình điện thoại nhỏ */
+        max-height: 450px; /* Giảm chiều cao tối đa */
+    }
+    
+    .chatbot-header {
+        font-size: 16px; /* Giảm kích thước chữ tiêu đề */
+        padding: 12px;
+    }
+    
+    .chatbot-input-container input {
+        padding: 10px; /* Thêm padding cho input trên màn hình nhỏ */
+    }
+}
